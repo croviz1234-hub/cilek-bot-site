@@ -1,0 +1,256 @@
+/* Nexora Tarzı Neon Renk Paleti */
+:root {
+    --bg-main: #060913;       /* Çok koyu uzay mavisi/siyah */
+    --bg-card: rgba(13, 18, 36, 0.7); /* Şeffaf cam efekti için */
+    --primary: #ff4d6d;       /* Canlı Çilek Neon Kırmızısı */
+    --primary-glow: rgba(255, 77, 109, 0.4);
+    --text-white: #ffffff;
+    --text-gray: #8a94a6;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 77, 109, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Nexora Tarzı Arka Plan Işıma Küreleri */
+.glow-sphere {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+.sphere-1 { top: -100px; left: -200px; }
+.sphere-2 { bottom: 200px; right: -200px; }
+
+/* Navbar Tasarımı (Buzlu Cam - Glassmorphism) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10%;
+    background: rgba(6, 9, 19, 0.8);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.nav-logo span { color: var(--primary); }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--text-white); }
+
+.nav-btn {
+    background: var(--primary);
+    color: white !important;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px var(--primary-glow);
+    transition: all 0.3s !important;
+}
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px var(--primary);
+}
+
+/* Hero Bölümü */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content { max-width: 850px; }
+
+.badge {
+    background: rgba(255, 77, 109, 0.1);
+    border: 1px solid var(--primary-glow);
+    color: var(--primary);
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+.hero h1 span { color: var(--primary); text-shadow: 0 0 20px var(--primary-glow); }
+
+.hero p {
+    color: var(--text-gray);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* Butonlar */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 10px;
+    transition: all 0.2s;
+}
+
+.btn-primary { background: var(--primary); color: white; box-shadow: 0 4px 15px var(--primary-glow); }
+.btn-primary:hover { background: #ff758f; }
+
+.btn-secondary { background: rgba(255, 255, 255, 0.03); color: white; border: 1px solid var(--border); }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.08); }
+
+/* İstatistik Kartları (Nexora Stili) */
+.stats-section { padding: 40px 10%; }
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+.stat-number { font-family: 'Rajdhani', sans-serif; font-size: 36px; color: var(--primary); font-weight: 700; }
+.stat-label { color: var(--text-gray); font-size: 14px; margin-top: 5px; }
+
+/* Ortak Başlık */
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-family: 'Rajdhani', sans-serif; font-size: 42px; font-weight: 700; }
+.section-title p { color: var(--text-gray); margin-top: 10px; }
+
+/* Modüller / Özellikler */
+.features { padding: 100px 10%; }
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.feature-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    padding: 40px 30px;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+.feature-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.05);
+}
+.card-icon { font-size: 32px; color: var(--primary); margin-bottom: 20px; }
+.feature-card h3 { font-family: 'Rajdhani', sans-serif; font-size: 24px; margin-bottom: 12px; }
+.feature-card p { color: var(--text-gray); font-size: 14px; line-height: 1.6; }
+
+/* Komut Konsolu */
+.commands-section { padding: 100px 10%; }
+.commands-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.command-group {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 35px;
+    border-radius: 16px;
+}
+.command-group h3 { font-family: 'Rajdhani', sans-serif; font-size: 24px; margin-bottom: 20px; color: var(--primary); }
+.command-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border-left: 3px solid var(--primary);
+}
+.cmd-name { font-family: monospace; font-weight: bold; color: white; font-size: 15px; }
+.cmd-desc { color: var(--text-gray); font-size: 13px; margin-top: 4px; }
+
+/* Güncellemeler */
+.updates { padding: 100px 10%; }
+.update-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-hover);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 16px;
+}
+.update-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
+.version { background: rgba(255, 77, 109, 0.15); color: var(--primary); padding: 4px 12px; border-radius: 4px; font-weight: 600; font-size: 13px; }
+.date { color: var(--text-gray); font-size: 13px; }
+.update-box h3 { font-family: 'Rajdhani', sans-serif; font-size: 26px; margin-bottom: 15px; }
+.update-box p { color: var(--text-gray); margin-bottom: 20px; }
+.update-box ul li { position: relative; padding-left: 20px; margin-bottom: 10px; color: #d1d5db; font-size: 15px; list-style: none; }
+.update-box ul li::before { content: "•"; color: var(--primary); position: absolute; left: 0; font-size: 20px; top: -4px; }
+
+/* Footer */
+footer { padding: 40px 10%; border-top: 1px solid var(--border); text-align: center; }
+footer p { color: var(--text-gray); font-size: 13px; }
+.credits strong { color: var(--primary); }
+
+/* Mobil Düzen */
+@media (max-width: 768px) {
+    .nav-links a:not(.nav-btn) { display: none; }
+    .hero h1 { font-size: 42px; }
+    .stats-grid { grid-template-columns: 1fr; }
+}

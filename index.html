@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çilek Bot — Profesyonel Jubbio Altyapısı</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts - Rajdhani ve Inter (Nexora Tarzı Oyuncu Fontları) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- İkonlar -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ARKA PLAN IŞIKLARI (Nexora Tarzı Neon Küreler) -->
+    <div class="glow-sphere sphere-1"></div>
+    <div class="glow-sphere sphere-2"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-logo">🍓 Çilek<span>Bot</span></div>
+        <div class="nav-links">
+            <a href="#ozellikler">Özellikler</a>
+            <a href="#istatistikler">İstatistikler</a>
+            <a href="#komutlar">Komutlar</a>
+            <a href="#guncellemeler">Güncellemeler</a>
+            <a href="https://jubbio.com/oauth2/authorize?client_id=a3990394963db32c96a4dd106062f84c&response_type=code&scope=bot" target="_blank" class="nav-btn">Botu Ekle</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="badge"><i class="fa-solid fa-bolt"></i> JUBBIO ECOSYSTEM</div>
+            <h1>Sunucunuza Güç Katın:<br><span>Çilek Bot</span></h1>
+            <p>@jubbio/core kütüphanesi ve gelişmiş Base44 SDK altyapısı ile sıfırdan inşa edildi. Gelişmiş ekonomi, adil zindan mekanikleri ve optimize edilmiş metin UI yapısıyla sunucunuzu canlandırın.</p>
+            <div class="hero-buttons">
+                <a href="https://jubbio.com/oauth2/authorize?client_id=a3990394963db32c96a4dd106062f84c&response_type=code&scope=bot" target="_blank" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Hemen Davet Et</a>
+                <a href="#ozellikler" class="btn btn-secondary">Daha Fazla Bilgi</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- İSTATİSTİKLER (Nexora Tarzı Sayaç Alanı) -->
+    <section id="istatistikler" class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h2 class="stat-number">99.9%</h2>
+                <p class="stat-label">Uptime / Aktiflik</p>
+            </div>
+            <div class="stat-card">
+                <h2 class="stat-number">0ms</h2>
+                <p class="stat-label">Gecikme Süresi</p>
+            </div>
+            <div class="stat-card">
+                <h2 class="stat-number">v1.2.0</h2>
+                <p class="stat-label">Kararlı Sürüm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖZELLİKLER -->
+    <section id="ozellikler" class="features">
+        <div class="section-title">
+            <h2>Gelişmiş Modüller</h2>
+            <p>Çilek Bot, tamamen metin tabanlı şık bir UI tasarımı (Mochi stili) sunarak kullanıcıları yormaz.</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <h3>Dengeli Ekonomi</h3>
+                <p>Aşırı hızlı para kazanma durumları tamamen engellendi. Kullanıcıların keyif alacağı, adil ve rekabetçi bir piyasa sistemi.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-shield-cat"></i></div>
+                <h3>Zindan ve Ganimet</h3>
+                <p><code>nova zindan</code> ile tehlikeli zindanlara adım atın, canavarları temizleyin ve nadir ekipmanlar düşürün.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-shrimp"></i></div>
+                <h3>Gelişmiş Balıkçılık</h3>
+                <p>Şans faktörü ve nadirlik oranları optimize edilmiş, sunucu üyelerinin saatlerce vakit geçirebileceği balıkçılık modülü.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Profesyonel Mimari</h3>
+                <p>Yüksek performanslı kod yapısı sayesinde takılma veya komut donması yaşamadan kesintisiz hizmet sunar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KOMUTLAR -->
+    <section id="komutlar" class="commands-section">
+        <div class="section-title">
+            <h2><i class="fa-solid fa-terminal"></i> Komut Konsolu</h2>
+            <p>Prefix: <code>nova</code></p>
+        </div>
+        
+        <div class="commands-container">
+            <div class="command-group">
+                <h3><i class="fa-solid fa-coins"></i> Ekonomi & Ticaret</h3>
+                <div class="command-item">
+                    <span class="cmd-name">nova para</span>
+                    <span class="cmd-desc">Cüzdan ve banka bakiyenizi anlık olarak listeler.</span>
+                </div>
+                <div class="command-item">
+                    <span class="cmd-name">nova günlük</span>
+                    <span class="cmd-desc">24 saatlik periyotlarla çilek parası ödülünüzü verir.</span>
+                </div>
+                <div class="command-item">
+                    <span class="cmd-name">nova gönder</span>
+                    <span class="cmd-desc">Belirttiğiniz kullanıcıya komisyonsuz para transferi yapar.</span>
+                </div>
+            </div>
+
+            <div class="command-group">
+                <h3><i class="fa-solid fa-gamepad"></i> RPG & Aktivite</h3>
+                <div class="command-item">
+                    <span class="cmd-name">nova zindan</span>
+                    <span class="cmd-desc">Zindana giriş yaparak yaratıklarla savaş başlatır.</span>
+                </div>
+                <div class="command-item">
+                    <span class="cmd-name">nova balıktut</span>
+                    <span class="cmd-desc">Göl veya denizde avlanarak en nadir balıkları yakalar.</span>
+                </div>
+                <div class="command-item">
+                    <span class="cmd-name">nova market</span>
+                    <span class="cmd-desc">Oyun modülleri için gerekli olan teçhizatları listeler.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GÜNCELLEMELER -->
+    <section id="guncellemeler" class="updates">
+        <div class="section-title">
+            <h2>Geliştirme Günlüğü</h2>
+            <p>Çilek Bot gelişimini durdurmuyor, sürekli güncelleniyor.</p>
+        </div>
+        
+        <div class="update-box">
+            <div class="update-header">
+                <span class="version">v1.2.0 Stable</span>
+                <span class="date">30 Mayıs 2026</span>
+            </div>
+            <h3>Büyük Dengeleme ve Metin UI Güncellemesi</h3>
+            <p>Kullanıcılardan gelen geri bildirimler doğrultusunda sistem optimize edildi:</p>
+            <ul>
+                <li> Ekonomi kazanç dengesi kuruldu; aşırı kazanç sağlayan açıklar kapatıldı.</li>
+                <li> Fotoğraflı tasarımlar tamamen kaldırılarak yerine <strong>Mochi stili şık ve temiz metin UI</strong> entegre edildi.</li>
+                <li> RPG severler için zindan maceraları ve canavar savaşları aktif edildi.</li>
+                <li> Altyapı en güncel paket mimarisine yükseltilerek komut yanıt süreleri sıfıra indirildi.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Çilek Bot. Tüm hakları saklıdır. Bu proje bir Jubbio topluluk botudur.</p>
+            <p class="credits">Geliştirici: <strong>Kerem Admin</strong></p>
+        </div>
+    </footer>
+
+</body>
+</html>
