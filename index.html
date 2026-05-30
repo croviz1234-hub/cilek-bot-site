@@ -3,166 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Çilek Bot — Profesyonel Jubbio Altyapısı</title>
+    <title>Çilek Network — Premium Yönetim Paneli</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts - Rajdhani ve Inter (Nexora Tarzı Oyuncu Fontları) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
-    <!-- İkonlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <!-- ARKA PLAN IŞIKLARI (Nexora Tarzı Neon Küreler) -->
-    <div class="glow-sphere sphere-1"></div>
-    <div class="glow-sphere sphere-2"></div>
+    <div class="cyber-bg-wrapper">
+        <div class="glow-sphere sphere-1"></div>
+        <div class="glow-sphere sphere-2"></div>
+        <div id="particles-container"></div>
+    </div>
 
-    <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="nav-logo">🍓 Çilek<span>Bot</span></div>
+        <div class="nav-logo">🍓 Çilek<span>Network</span></div>
         <div class="nav-links">
+            <a href="#istatistikler">Durum</a>
             <a href="#ozellikler">Özellikler</a>
-            <a href="#istatistikler">İstatistikler</a>
-            <a href="#komutlar">Komutlar</a>
-            <a href="#guncellemeler">Güncellemeler</a>
-            <a href="https://jubbio.com/oauth2/authorize?client_id=a3990394963db32c96a4dd106062f84c&response_type=code&scope=bot" target="_blank" class="nav-btn">Botu Ekle</a>
+            <a href="#botlar-section">Botlarımız</a>
+            <a href="#guncellemeler">Günlük</a>
+            
+            <button id="auth-trigger-btn" class="nav-login-link"><i class="fa-solid fa-right-to-bracket"></i> Giriş Yap</button>
+            
+            <div id="user-badge" class="user-badge" style="display: none;">
+                <span id="user-badge-icon">👤</span> <span id="user-tag">Misafir</span>
+                <button id="admin-reports-trigger" class="btn-reports-menu" style="display: none;"><i class="fa-solid fa-envelope-open-text"></i> Raporlar</button>
+                <button id="logout-btn" class="logout-mini-btn" title="Çıkış Yap"><i class="fa-solid fa-power-off"></i></button>
+            </div>
+            
+            <a href="https://jubbio.com/invite/x5trLTqy" target="_blank" class="nav-btn btn-pulse">Sunucuya Katıl</a>
         </div>
     </nav>
 
-    <!-- HERO -->
     <header class="hero">
         <div class="hero-content">
-            <div class="badge"><i class="fa-solid fa-bolt"></i> JUBBIO ECOSYSTEM</div>
-            <h1>Sunucunuza Güç Katın:<br><span>Çilek Bot</span></h1>
-            <p>@jubbio/core kütüphanesi ve gelişmiş Base44 SDK altyapısı ile sıfırdan inşa edildi. Gelişmiş ekonomi, adil zindan mekanikleri ve optimize edilmiş metin UI yapısıyla sunucunuzu canlandırın.</p>
+            <div class="badge-cyber"><i class="fa-solid fa-bolt"></i> JUBBIO ECOSYSTEM CORE</div>
+            <h1>Gelişmiş Altyapı Eko-Sistemi:<br><span>Çilek Network</span></h1>
+            <p class="hero-subtitle">Bizim yaptığımız botları ekleyin ve deneyin! @jubbio/core kütüphanesi ve Base44 SDK altyapısı ile geliştirilen projelerle sunucunuzun performansını zirveye taşıyın.</p>
             <div class="hero-buttons">
-                <a href="https://jubbio.com/oauth2/authorize?client_id=a3990394963db32c96a4dd106062f84c&response_type=code&scope=bot" target="_blank" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Hemen Davet Et</a>
-                <a href="#ozellikler" class="btn btn-secondary">Daha Fazla Bilgi</a>
+                <a href="https://jubbio.com/invite/x5trLTqy" target="_blank" class="btn btn-cyber-primary"><i class="fa-solid fa-right-to-bracket"></i> Sunucumuzu Deneyimle</a>
+                <a href="#botlar-section" class="btn btn-cyber-secondary">Botları Test Et</a>
             </div>
         </div>
     </header>
 
-    <!-- İSTATİSTİKLER (Nexora Tarzı Sayaç Alanı) -->
     <section id="istatistikler" class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h2 class="stat-number">99.9%</h2>
-                <p class="stat-label">Uptime / Aktiflik</p>
-            </div>
-            <div class="stat-card">
-                <h2 class="stat-number">0ms</h2>
-                <p class="stat-label">Gecikme Süresi</p>
-            </div>
-            <div class="stat-card">
-                <h2 class="stat-number">v1.2.0</h2>
-                <p class="stat-label">Kararlı Sürüm</p>
+        <div class="stats-grid-single">
+            <div class="stat-card centered-stat">
+                <div class="stat-icon"><i class="fa-solid fa-robot"></i></div>
+                <div class="stat-info">
+                    <h3 id="stat-bot-count">0</h3>
+                    <p>Aktif Proje & Bot Sistemde Yayında</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ÖZELLİKLER -->
     <section id="ozellikler" class="features">
         <div class="section-title">
-            <h2>Gelişmiş Modüller</h2>
-            <p>Çilek Bot, tamamen metin tabanlı şık bir UI tasarımı (Mochi stili) sunarak kullanıcıları yormaz.</p>
+            <h2 class="neon-title">Sistem Özellikleri</h2>
+            <button id="admin-add-feature-trigger" class="admin-plus-btn" title="Yeni Özellik Ekle" style="display: none;"><i class="fa-solid fa-plus"></i></button>
         </div>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-                <h3>Dengeli Ekonomi</h3>
-                <p>Aşırı hızlı para kazanma durumları tamamen engellendi. Kullanıcıların keyif alacağı, adil ve rekabetçi bir piyasa sistemi.</p>
-            </div>
-            <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-shield-cat"></i></div>
-                <h3>Zindan ve Ganimet</h3>
-                <p><code>nova zindan</code> ile tehlikeli zindanlara adım atın, canavarları temizleyin ve nadir ekipmanlar düşürün.</p>
-            </div>
-            <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-shrimp"></i></div>
-                <h3>Gelişmiş Balıkçılık</h3>
-                <p>Şans faktörü ve nadirlik oranları optimize edilmiş, sunucu üyelerinin saatlerce vakit geçirebileceği balıkçılık modülü.</p>
-            </div>
-            <div class="feature-card">
-                <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-                <h3>Profesyonel Mimari</h3>
-                <p>Yüksek performanslı kod yapısı sayesinde takılma veya komut donması yaşamadan kesintisiz hizmet sunar.</p>
-            </div>
-        </div>
+        <p class="section-desc-center">Ağımızdaki tüm botların ve altyapıların ortak gelişmiş mimari standartları.</p>
+        <div id="dynamic-features-container" class="feature-grid"></div>
     </section>
 
-    <!-- KOMUTLAR -->
-    <section id="komutlar" class="commands-section">
+    <section id="botlar-section" class="bot-display-zone">
         <div class="section-title">
-            <h2><i class="fa-solid fa-terminal"></i> Komut Konsolu</h2>
-            <p>Prefix: <code>nova</code></p>
+            <h2 class="neon-title">Aktif Botlarımız</h2>
+            <button id="admin-add-bot-trigger" class="admin-plus-btn" title="Yeni Bot Ekle" style="display: none;"><i class="fa-solid fa-plus"></i></button>
         </div>
+        <p class="section-desc-center">Aşağıdaki kartlara tıklayarak botları sunucunuza anında ekleyebilir, hata ve önerilerinizi iletebilirsiniz.</p>
         
-        <div class="commands-container">
-            <div class="command-group">
-                <h3><i class="fa-solid fa-coins"></i> Ekonomi & Ticaret</h3>
-                <div class="command-item">
-                    <span class="cmd-name">nova para</span>
-                    <span class="cmd-desc">Cüzdan ve banka bakiyenizi anlık olarak listeler.</span>
-                </div>
-                <div class="command-item">
-                    <span class="cmd-name">nova günlük</span>
-                    <span class="cmd-desc">24 saatlik periyotlarla çilek parası ödülünüzü verir.</span>
-                </div>
-                <div class="command-item">
-                    <span class="cmd-name">nova gönder</span>
-                    <span class="cmd-desc">Belirttiğiniz kullanıcıya komisyonsuz para transferi yapar.</span>
-                </div>
-            </div>
-
-            <div class="command-group">
-                <h3><i class="fa-solid fa-gamepad"></i> RPG & Aktivite</h3>
-                <div class="command-item">
-                    <span class="cmd-name">nova zindan</span>
-                    <span class="cmd-desc">Zindana giriş yaparak yaratıklarla savaş başlatır.</span>
-                </div>
-                <div class="command-item">
-                    <span class="cmd-name">nova balıktut</span>
-                    <span class="cmd-desc">Göl veya denizde avlanarak en nadir balıkları yakalar.</span>
-                </div>
-                <div class="command-item">
-                    <span class="cmd-name">nova market</span>
-                    <span class="cmd-desc">Oyun modülleri için gerekli olan teçhizatları listeler.</span>
-                </div>
+        <div class="search-filter-wrapper">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="bot-search-input" placeholder="Aradığınız botun adını yazın...">
             </div>
         </div>
+
+        <div id="dynamic-bots-container" class="bot-square-grid"></div>
     </section>
 
-    <!-- GÜNCELLEMELER -->
     <section id="guncellemeler" class="updates">
         <div class="section-title">
-            <h2>Geliştirme Günlüğü</h2>
-            <p>Çilek Bot gelişimini durdurmuyor, sürekli güncelleniyor.</p>
+            <h2 class="neon-title">Geliştirme Günlüğü</h2>
+            <button id="admin-add-update-trigger" class="admin-plus-btn" title="Yeni Güncelleme Ekle" style="display: none;"><i class="fa-solid fa-plus"></i></button>
         </div>
-        
-        <div class="update-box">
-            <div class="update-header">
-                <span class="version">v1.2.0 Stable</span>
-                <span class="date">30 Mayıs 2026</span>
-            </div>
-            <h3>Büyük Dengeleme ve Metin UI Güncellemesi</h3>
-            <p>Kullanıcılardan gelen geri bildirimler doğrultusunda sistem optimize edildi:</p>
-            <ul>
-                <li> Ekonomi kazanç dengesi kuruldu; aşırı kazanç sağlayan açıklar kapatıldı.</li>
-                <li> Fotoğraflı tasarımlar tamamen kaldırılarak yerine <strong>Mochi stili şık ve temiz metin UI</strong> entegre edildi.</li>
-                <li> RPG severler için zindan maceraları ve canavar savaşları aktif edildi.</li>
-                <li> Altyapı en güncel paket mimarisine yükseltilerek komut yanıt süreleri sıfıra indirildi.</li>
-            </ul>
-        </div>
+        <p class="section-desc-center">Çilek Network projeleri ve botları sürekli olarak optimize edilmeye devam ediyor.</p>
+        <div id="updates-live-container"></div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Çilek Bot. Tüm hakları saklıdır. Bu proje bir Jubbio topluluk botudur.</p>
-            <p class="credits">Geliştirici: <strong>Kerem Admin</strong></p>
+    <div id="auth-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-tabs">
+                <button id="tab-login" class="tab-btn active">Giriş Yap</button>
+                <button id="tab-register" class="tab-btn">Kayıt Ol</button>
+            </div>
+            <form id="form-login" class="auth-form">
+                <div class="input-group">
+                    <label><i class="fa-solid fa-user"></i> Kullanıcı Adı</label>
+                    <input type="text" id="login-username" placeholder="Kullanıcı adınızı girin" required>
+                </div>
+                <div class="input-group">
+                    <label><i class="fa-solid fa-lock"></i> Şifre</label>
+                    <input type="password" id="login-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-auth-submit">Sisteme Giriş Yap</button>
+            </form>
+            <form id="form-register" class="auth-form" style="display: none;">
+                <div class="input-group">
+                    <label><i class="fa-solid fa-user-plus"></i> Kullanıcı Adı</label>
+                    <input type="text" id="reg-username" placeholder="Yeni kullanıcı adı" required>
+                </div>
+                <div class="input-group">
+                    <label><i class="fa-solid fa-lock"></i> Şifre</label>
+                    <input type="password" id="reg-password" placeholder="••••••••" required>
+                </div>
+                <div class="input-group">
+                    <label><i class="fa-solid fa-shield-halved"></i> Şifre Tekrar</label>
+                    <input type="password" id="reg-password-confirm" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-auth-submit">Hesabımı Oluştur</button>
+            </form>
+            <button id="auth-close" class="btn-close">İptal Et</button>
         </div>
+    </div>
+
+    <div id="admin-feature-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header-title">
+                <h3><i class="fa-solid fa-cubes"></i> Yeni Özellik Kartı Ekle</h3>
+            </div>
+            <div class="auth-form" style="margin-top:15px;">
+                <div class="input-group">
+                    <label>İkon Kodu (Örn: fa-solid fa-shield)</label>
+                    <input type="text" id="adm-feat-icon" placeholder="fa-solid fa-star">
+                </div>
+                <div class="input-group">
+                    <label>Özellik Başlığı</label>
+                    <input type="text" id="adm-feat-title" placeholder="Örn: Dengeli Ekonomi" required>
+                </div>
+                <div class="input-group">
+                    <label>Özellik Açıklaması</label>
+                    <textarea id="adm-feat-desc" placeholder="Kullanıcılara yönelik kısa açıklama metni..." required></textarea>
+                </div>
+                <button id="btn-save-feature" class="btn-auth-submit"><i class="fa-solid fa-square-plus"></i> Özelliği Ekle</button>
+                <button id="admin-feature-close" class="btn-close">Kapat</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-bot-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-large">
+            <div class="modal-header-title">
+                <h3><i class="fa-solid fa-robot"></i> Yeni Bot Yayınlama Paneli</h3>
+            </div>
+            <div class="auth-form" style="margin-top:15px;">
+                <div class="input-group">
+                    <label>Bot Adı</label>
+                    <input type="text" id="adm-bot-name" placeholder="Örn: Nova Core" required>
+                </div>
+                <div class="input-group">
+                    <label>Yönlendirme / Davet Linki</label>
+                    <input type="text" id="adm-bot-link" value="https://jubbio.com/invite/x5trLTqy">
+                </div>
+                <div class="input-group">
+                    <label>Bot Açıklaması</label>
+                    <textarea id="adm-bot-desc" placeholder="Botun özellikleri ve kullanıcı komutları..." required></textarea>
+                </div>
+                
+                <div class="adm-media-upload">
+                    <div class="upload-group">
+                        <label>Profil Fotoğrafı Ayarı</label>
+                        <div class="custom-file-row">
+                            <input type="text" id="adm-bot-avatar-url" placeholder="Görsel URL Yapıştır">
+                            <label class="custom-file-upload">
+                                <input type="file" id="adm-bot-avatar-file" accept="image/*">
+                                <i class="fa-solid fa-file-image"></i> Dosya Seç
+                            </label>
+                        </div>
+                    </div>
+                    <div class="upload-group">
+                        <label>Bot Banner Görsel Ayarı</label>
+                        <div class="custom-file-row">
+                            <input type="text" id="adm-bot-banner-url" placeholder="Banner URL Yapıştır">
+                            <label class="custom-file-upload">
+                                <input type="file" id="adm-bot-banner-file" accept="image/*">
+                                <i class="fa-solid fa-images"></i> Dosya Seç
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button id="btn-save-bot" class="btn-auth-submit"><i class="fa-solid fa-cloud-arrow-up"></i> Botu Canlıya Ekle</button>
+                <button id="admin-bot-close" class="btn-close">Kapat</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-update-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header-title">
+                <h3><i class="fa-solid fa-code-merge"></i> Güncelleme Notu Ekle</h3>
+            </div>
+            <div class="auth-form" style="margin-top:15px;">
+                <div class="input-group">
+                    <label>Sürüm No</label>
+                    <input type="text" id="adm-update-version" placeholder="Örn: v1.0.0 Stable" required>
+                </div>
+                <div class="input-group">
+                    <label>Güncelleme Başlığı</label>
+                    <input type="text" id="adm-update-title" placeholder="Örn: Altyapı Düzenlemeleri" required>
+                </div>
+                <div class="input-group">
+                    <label>Değişiklik Günlüğü (Her satıra tek madde)</label>
+                    <textarea id="adm-update-details" style="height: 100px;" placeholder="Dengeleme sağlandı&#10;Hatalar giderildi" required></textarea>
+                </div>
+                <button id="btn-save-update" class="btn-auth-submit btn-blue-color"><i class="fa-solid fa-bullhorn"></i> Güncellemeyi Yayınla</button>
+                <button id="admin-update-close" class="btn-close">Kapat</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-reports-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content modal-large">
+            <div class="modal-header-title" style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.08); padding-bottom:10px;">
+                <h3><i class="fa-solid fa-envelope-open-text"></i> Hata & Öneri Havuzu</h3>
+                <button id="btn-clear-all-reports" class="btn-clear-reports"><i class="fa-solid fa-trash-can"></i> Hepsini Sil</button>
+            </div>
+            <div id="admin-reports-wrapper" class="reports-list-container"></div>
+            <button id="admin-reports-close" class="btn-close" style="margin-top:15px;">Paneli Kapat</button>
+        </div>
+    </div>
+
+    <div class="chat-widget">
+        <div class="chat-widget-header" id="chat-toggle-btn">
+            <span><i class="fa-solid fa-comments"></i> Global Ağ Sohbeti</span>
+            <i class="fa-solid fa-chevron-up" id="chat-chevron"></i>
+        </div>
+        <div class="chat-widget-body" id="chat-body">
+            <div id="chat-logs" class="chat-logs"></div>
+            <div class="chat-widget-input">
+                <input type="text" id="widget-input" placeholder="Sohbete katılmak için giriş yapın..." disabled>
+                <button id="widget-send" disabled><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Çilek Network. Tüm hakları saklıdır. Kurucu & Baş Geliştirici: <strong>Kerem Admin</strong></p>
     </footer>
 
+    <script src="app.js"></script>
 </body>
 </html>
